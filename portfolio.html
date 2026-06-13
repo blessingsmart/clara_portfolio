@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Clara Napoleon | Executive Virtual Assistant & Project Manager</title>
+    <!-- Google Fonts & Font Awesome CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fefcf7;
+            color: #1e2a3e;
+            scroll-behavior: smooth;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* header & nav */
+        .navbar {
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(2px);
+            background-color: rgba(255, 255, 255, 0.96);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            flex-wrap: wrap;
+        }
+        .logo h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2b5f8a, #3b9b6e);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+        }
+        .logo p {
+            font-size: 0.75rem;
+            color: #4b6a8b;
+            font-weight: 500;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #1e2a3e;
+            transition: 0.2s;
+            font-size: 0.95rem;
+        }
+        .nav-links a:hover {
+            color: #2c7a5e;
+        }
+        .btn-outline-light {
+            background: transparent;
+            border: 1px solid #2c7a5e;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            color: #2c7a5e;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .btn-outline-light:hover {
+            background: #2c7a5e;
+            color: white;
+        }
+
+        /* hero */
+        .hero {
+            padding: 3.5rem 0 4rem;
+        }
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            flex: 1;
+        }
+        .hero-badge {
+            background: #e9f4ef;
+            color: #2c7a5e;
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #0a2b2e;
+        }
+        .hero-highlight {
+            color: #2c7a5e;
+            border-bottom: 3px solid #cbd5e1;
+        }
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #334155;
+            margin: 1rem 0 1.8rem;
+            max-width: 90%;
+        }
+        .hero-image {
+            flex: 0.8;
+            text-align: center;
+        }
+        .hero-image img {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 50% 30% 50% 30% / 40% 50% 40% 50%;
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.15);
+            border: 4px solid white;
+            object-fit: cover;
+            aspect-ratio: 1/1;
+        }
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: #2c7a5e;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: all 0.2s;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            background: #1f5e48;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid #cbd5e1;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            color: #1e2a3e;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .btn-secondary:hover {
+            border-color: #2c7a5e;
+            background: #f1f5f9;
+        }
+
+        /* section style */
+        section {
+            padding: 5rem 0;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-sub {
+            color: #4b6a8b;
+            margin-bottom: 3rem;
+            font-size: 1rem;
+            max-width: 700px;
+        }
+        .divider {
+            width: 70px;
+            height: 4px;
+            background: #2c7a5e;
+            margin: 0.5rem 0 1.8rem 0;
+            border-radius: 4px;
+        }
+
+        /* services cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .service-card {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 28px;
+            box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.05);
+            transition: all 0.25s;
+            border: 1px solid #eef2f0;
+        }
+        .service-card i {
+            font-size: 2.2rem;
+            color: #2c7a5e;
+            margin-bottom: 1.2rem;
+        }
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.6rem;
+        }
+        .service-card p {
+            color: #475569;
+            font-size: 0.9rem;
+        }
+
+        /* work cards (portfolio) */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+        .work-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        .work-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 35px -14px rgba(0, 0, 0, 0.12);
+        }
+        .work-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .work-info {
+            padding: 1.5rem;
+        }
+        .work-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+        .badge-stat {
+            background: #eaf8f0;
+            color: #2c7a5e;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.2rem 0.8rem;
+            display: inline-block;
+            margin: 0.6rem 0 0.5rem;
+        }
+        .work-info p {
+            color: #334155;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+
+        /* tools section */
+        .tools-showcase {
+            background: #ffffffec;
+            border-radius: 48px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e9ecef;
+        }
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .tool-item {
+            text-align: center;
+            background: #f9fafb;
+            padding: 0.7rem 1.5rem;
+            border-radius: 60px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .tool-item i {
+            font-size: 1.3rem;
+            color: #2c7a5e;
+        }
+
+        /* certificate */
+        .certificate-card {
+            display: flex;
+            flex-wrap: wrap;
+            background: white;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
+            border: 1px solid #eef2f0;
+        }
+        .cert-details {
+            flex: 2;
+            padding: 2rem;
+        }
+        .cert-details h3 {
+            font-size: 1.7rem;
+            margin-bottom: 0.75rem;
+        }
+        .cert-qr {
+            flex: 1;
+            background: #faf9f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .cert-qr img {
+            width: 130px;
+            height: 130px;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            background: white;
+            padding: 6px;
+            border: 1px solid #e2e8f0;
+        }
+        .verify-link {
+            font-size: 0.8rem;
+            word-break: break-all;
+            color: #2c7a5e;
+        }
+
+        /* contact */
+        .contact-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            background: #1e2a3e;
+            border-radius: 40px;
+            padding: 3rem;
+            color: white;
+        }
+        .contact-info h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+        .contact-detail {
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .contact-detail i {
+            font-size: 1.3rem;
+            width: 32px;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 1rem;
+        }
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .hero-content h1 {
+                font-size: 2.3rem;
+            }
+            .hero-grid {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .hero-content p {
+                max-width: 100%;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            .section-title {
+                font-size: 1.9rem;
+            }
+            .contact-flex {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+            .contact-detail {
+                justify-content: center;
+            }
+        }
+        .experience-text {
+            background: #f1f6f3;
+            padding: 2rem;
+            border-radius: 32px;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <h2>Clara Napoleon</h2>
+                <p>Executive VA & Project Manager</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#work">Portfolio</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="btn-outline-light">Hire Me</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="hero-badge"><i class="fas fa-star-of-life"></i> Remote Professional</span>
+                    <h1>I'm Clara Napoleon <br> <span class="hero-highlight">Executive Virtual Assistant</span> & Project Manager</h1>
+                    <p>Proactive, detail-oriented, and passionate about streamlining operations. I bring seamless administrative support, calendar mastery, and project coordination to help your business thrive.</p>
+                    <div class="btn-group">
+                        <a href="#work" class="btn-primary">View My Work <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contact" class="btn-secondary">Let's Connect</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&auto=format" alt="Clara Napoleon - professional portrait">
+                </div>
+            </div>
+        </section>
+
+        <!-- Welcome intro + experience -->
+        <div class="container">
+            <div class="experience-text">
+                <h3><i class="fas fa-hand-peace"></i> Welcome to my portfolio</h3>
+                <p>Here you'll find examples of my work as a proactive and detail-oriented Virtual Assistant. With a strong background in administrative support and customer service, I bring extensive experience in managing schedules, coordinating emails and calendars, and ensuring seamless client communication. My goal is to provide efficient remote support that contributes to your organizational success.</p>
+                <p style="margin-top: 12px;"><strong>🌟 My focus:</strong> empowering busy professionals by streamlining workflows and boosting productivity. From improving organizational efficiency to smooth daily operations, I deliver administrative excellence.</p>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <section id="services">
+            <div class="container">
+                <h2 class="section-title">My Service & Expertise</h2>
+                <div class="divider"></div>
+                <p class="section-sub">Comprehensive virtual assistance to scale your business</p>
+                <div class="services-grid">
+                    <div class="service-card"><i class="fas fa-tasks"></i><h3>Project Management</h3><p>End-to-end coordination, timelines, team sync</p></div>
+                    <div class="service-card"><i class="far fa-calendar-alt"></i><h3>Calendar Management</h3><p>Scheduling, real-time availability & smart planning</p></div>
+                    <div class="service-card"><i class="fas fa-envelope-open-text"></i><h3>Email Management</h3><p>Inbox zero, priority sorting, 80% faster access</p></div>
+                    <div class="service-card"><i class="fas fa-clock"></i><h3>Appointment Scheduling</h3><p>Automated booking, confirmations & reminders</p></div>
+                    <div class="service-card"><i class="fas fa-database"></i><h3>Data Entry & Research</h3><p>Competitor insights, credible data collection</p></div>
+                    <div class="service-card"><i class="fas fa-chalkboard-user"></i><h3>Meeting Agendas</h3><p>Structured breakdowns, time efficiency, focus</p></div>
+                    <div class="service-card"><i class="fas fa-pen-fancy"></i><h3>Content Writing</h3><p>Blogs, social posts, brand storytelling</p></div>
+                    <div class="service-card"><i class="fas fa-chart-line"></i><h3>Social Media Management</h3><p>Content scheduling, engagement & growth</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Portfolio / My Work Highlights (with pictures) -->
+        <section id="work">
+            <div class="container">
+                <h2 class="section-title">My Work Highlights</h2>
+                <div class="divider"></div>
+                <p class="section-sub">Real results & systems I’ve built for clients</p>
+                <div class="work-grid">
+                    <!-- Calendar Management -->
+                    <div class="work-card">
+                        <img class="work-img" src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=600&auto=format" alt="calendar management dashboard">
+                        <div class="work-info">
+                            <h3>📅 Smart Calendar System</h3>
+                            <span class="badge-stat"><i class="fas fa-chart-simple"></i> +70% efficiency</span>
+                            <p>Developed a personal calendar management system that allows users to schedule, track, and manage appointments, events, and tasks. Real-time availability sync reduced conflicts.</p>
+                        </div>
+                    </div>
+                    <!-- Email Management -->
+                    <div class="work-card">
+                        <img class="work-img" src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600&auto=format" alt="email organization">
+                        <div class="work-info">
+                            <h3>📧 Email Optimization</h3>
+                            <span class="badge-stat"><i class="fas fa-tachometer-alt"></i> 80% faster access</span>
+                            <p>Through effective organization and management of emails, access to relevant mails has been enhanced by 80%. Implemented filtering, labels, and automated follow-ups.</p>
+                        </div>
+                    </div>
+                    <!-- Appointment Scheduling -->
+                    <div class="work-card">
+                        <img class="work-img" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&auto=format" alt="appointment scheduling illustration">
+                        <div class="work-info">
+                            <h3>⏰ Smart Appointment Hub</h3>
+                            <span class="badge-stat"><i class="fas fa-calendar-check"></i> Real-time bookings</span>
+                            <p>Built appointment scheduling system for businesses (doctors, salons, consultants) allowing real-time availability, confirmation & reminder notifications → boosted satisfaction.</p>
+                        </div>
+                    </div>
+                    <!-- Data Entry & Competitor Research -->
+                    <div class="work-card">
+                        <img class="work-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&auto=format" alt="market research data">
+                        <div class="work-info">
+                            <h3>🔍 Competitor Intelligence</h3>
+                            <span class="badge-stat"><i class="fas fa-chart-line"></i> Data-driven insights</span>
+                            <p>Gathered credible, up-to-date information to analyze competitors' strengths, weaknesses and strategies, enabling strategic business decisions.</p>
+                        </div>
+                    </div>
+                    <!-- Meeting Agenda Mastery -->
+                    <div class="work-card">
+                        <img class="work-img" src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&auto=format" alt="meeting agenda and planning">
+                        <div class="work-info">
+                            <h3>📝 Meeting Agenda Architect</h3>
+                            <span class="badge-stat"><i class="fas fa-stopwatch"></i> Focused & timely</span>
+                            <p>Created structured breakdowns ensuring meetings stay on key topics, prevent overruns and maintain balance. Boosted team productivity by 35%.</p>
+                        </div>
+                    </div>
+                    <!-- Content Creation & Social Media Management -->
+                    <div class="work-card">
+                        <img class="work-img" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&auto=format" alt="social media and content strategy">
+                        <div class="work-info">
+                            <h3>✍️ Content & Social Growth</h3>
+                            <span class="badge-stat"><i class="fas fa-hashtag"></i> Engagement +45%</span>
+                            <p>Managed content calendars, wrote compelling copy, scheduled posts, and grew online presence across LinkedIn, Instagram and Twitter.</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem; text-align: center;">
+                    <p><i class="fas fa-check-circle" style="color:#2c7a5e;"></i> More projects: CRM setup, lead research, document management — customized for your niche.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Section with Images (Icons & visual representation) -->
+        <section id="tools">
+            <div class="container">
+                <div class="tools-showcase">
+                    <h2 class="section-title" style="margin-bottom: 0.5rem;">🛠️ TOOLS I USE</h2>
+                    <div class="divider" style="margin-bottom: 1.5rem;"></div>
+                    <div class="tools-grid">
+                        <div class="tool-item"><i class="fab fa-microsoft"></i> MS Office 365</div>
+                        <div class="tool-item"><i class="fab fa-google"></i> Google Workspace</div>
+                        <div class="tool-item"><i class="fas fa-trello"></i> Trello / Asana</div>
+                        <div class="tool-item"><i class="fas fa-slack"></i> Slack</div>
+                        <div class="tool-item"><i class="fas fa-video"></i> Zoom / Meet</div>
+                        <div class="tool-item"><i class="fas fa-calendar-week"></i> Calendly</div>
+                        <div class="tool-item"><i class="fas fa-chart-pie"></i> Canva / Notion</div>
+                        <div class="tool-item"><i class="fas fa-database"></i> Monday.com</div>
+                    </div>
+                    <p class="verify-link" style="text-align: center; margin-top: 1.5rem;"><i class="fas fa-laptop-code"></i> + CRM tools, HubSpot, Mailchimp, and project dashboards</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates & Education -->
+        <section>
+            <div class="container">
+                <h2 class="section-title">🎓 Certificates & Education</h2>
+                <div class="divider"></div>
+                <div class="certificate-card">
+                    <div class="cert-details">
+                        <h3>ALX Virtual Assistance Course</h3>
+                        <p><strong>Certificate of Achievement</strong> — proudly presented to Clara Napoleon</p>
+                        <p><i class="fas fa-calendar-alt"></i> 8-week intensive programme | Date of Issue: 26th November 2024</p>
+                        <p><i class="fas fa-check-circle"></i> Virtual Assistance Skills in the Digital Age — fully accredited by ALX</p>
+                        <p><strong>Fred Swancker, Founder & CEO, AL Group</strong></p>
+                        <a href="https://intranet.alxswc.com/certificates/lecsCRXZhP" target="_blank" class="btn-primary" style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1.5rem; font-size: 0.9rem;"><i class="fas fa-external-link-alt"></i> Verify Certificate</a>
+                    </div>
+                    <div class="cert-qr">
+                        <!-- Dynamic QR code for certificate verification (picture inclusion) -->
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https://intranet.alxswc.com/certificates/lecsCRXZhP" alt="QR code to verify ALX certificate">
+                        <p class="verify-link">Scan to authenticate <br> <span style="font-size: 11px;">or visit alxswc.com</span></p>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem; text-align: center;">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&auto=format" alt="education achievement" style="width: 80px; border-radius: 40px; opacity: 0.7;">
+                    <p style="margin-top: 10px;">Continuous learning: Project Management Essentials, Advanced Email Workflow, CRM administration</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section with Thank You -->
+        <section id="contact">
+            <div class="container">
+                <div class="contact-flex">
+                    <div class="contact-info">
+                        <h3>🙏 Thank You</h3>
+                        <p>For visiting my portfolio. Let's elevate your productivity together.</p>
+                        <div class="contact-detail"><i class="fas fa-phone-alt"></i> <span>+234-906-9068-735</span></div>
+                        <div class="contact-detail"><i class="fas fa-envelope"></i> <span>claraleon403@gmail.com</span></div>
+                        <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> <span>Nigeria (Remote Worldwide)</span></div>
+                        <div style="margin-top: 1.5rem; display: flex; gap: 12px;">
+                            <a href="#" style="color:white; background:#3b9b6e; padding: 8px 12px; border-radius: 40px;"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" style="color:white; background:#3b9b6e; padding: 8px 12px; border-radius: 40px;"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div style="max-width: 260px; text-align: center;">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=200&auto=format" alt="virtual assistant illustration" style="width: 100%; border-radius: 28px; box-shadow: 0 8px 18px rgba(0,0,0,0.2);">
+                        <p style="margin-top: 0.8rem; font-size: 0.8rem;">Available 9am - 6pm WAT | Fast response</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>© 2025 Clara Napoleon — Executive Virtual Assistant & Project Manager. Designed with <i class="fas fa-heart" style="color:#2c7a5e;"></i> for seamless remote excellence.</p>
+        </footer>
+    </main>
+</body>
+</html>
